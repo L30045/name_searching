@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: auto-search
+Version: 0.1.0
+Summary: Auto search for the people's profile.
+Home-page: https://github.com/chiyuan30045/name_searching
+Author: Chi-Yuan Chang
+Author-email: chiyuan30045+github@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# name_searching
+Search people on a given website
