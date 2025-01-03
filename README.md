@@ -21,8 +21,8 @@ python -m auto_search
 - The result will be saved in the `output` folder.
 
 ## Note
-- The searching process only matches the name.
-- In the future, the package will be able to filter by name, company, and area.
+- The searching process only matches `name`.
+- In the future, the package will be able to filter by `name`, `company`, `area`.
 - setup_beta.py is a script to automatically setup the package. It is still in beta. Not recommended to use it.
 
 
