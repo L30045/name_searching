@@ -100,17 +100,27 @@ class AutoSearch:
                 # if we find the person, click in and extract information
                 self.random_click()
                 result.click()
-                self.wait.until(EC.presence_of_element_located((By.ID, 'experience')))
-                experience = self.driver.find_element(By.XPATH, '//*[@id="profile-content"]/div/div[2]/div/div/main/section[7]')
-                # experience = self.driver.find_element(By.XPATH, '//*[text()="Experience"]')
+                anchor = self.wait.until(EC.presence_of_element_located((By.ID, 'experience')))
+                experience_section = anchor.find_element(By.XPATH, 'following-sibling::*[2]')
                 # get latest experience
-                latest_experience = experience.find_element(By.CLASS_NAME,'display-flex.flex-column.full-width').text.split('\n')
-                # get latest experience title
-                latest_experience_title = latest_experience[0]
-                # get latest experience company
-                latest_experience_company = latest_experience[2].split('·')[0]
-                # get latest experience location
-                latest_experience_location = latest_experience[-1].split('·')[0]
+                latest_experience = experience_section.find_element(By.XPATH, './/li[1]')
+                # check if the experience includes multiple titles
+                if latest_experience.find_element(By.XPATH, './/div/div[2]/div/*').tag_name == 'div':
+                    # single title
+                    # get latest experience title
+                    latest_experience_title = latest_experience.text.split('\n')[0].strip()
+                    # get latest experience company
+                    latest_experience_company = latest_experience.text.split('\n')[2].split('·')[0].strip()
+                    # get latest experience location
+                    latest_experience_location = latest_experience.text.split('\n')[6].split('·')[0].strip()
+                else:
+                    # multiple titles
+                    # get latest experience title
+                    latest_experience_title = latest_experience.text.split('\n')[4].strip()
+                    # get latest experience company
+                    latest_experience_company = latest_experience.text.split('\n')[0].split('·')[0].strip()
+                    # get latest experience location
+                    latest_experience_location = latest_experience.text.split('\n')[10].split('·')[0].strip()
                 # return the information
                 print('Found person')
                 latest_info = [name, latest_experience_title, latest_experience_company, latest_experience_location]
