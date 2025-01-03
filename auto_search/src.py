@@ -39,8 +39,8 @@ class AutoSearch:
         # Set random delay between 1-3 seconds to mimic human behavior
         self.random_click = lambda: time.sleep(random.uniform(config.min_click_delay, config.max_click_delay))
 
-    def login(self,username,password):
-        self.driver.get(config.target_url)
+    def login(self,target_url,username,password):
+        self.driver.get(target_url)
         # click sign in button
         self.wait.until(EC.presence_of_element_located((By.XPATH, '/html/body/nav/div/a[2]')))
         self.random_click()

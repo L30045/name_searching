@@ -8,13 +8,14 @@ import os
 #%% main function
 def run_main():
     #%% get username and password
-    username = input('Please input your LinkedIn username: ')
-    password = getpass.getpass('Please input your LinkedIn password: ')
-
+    target_url = input('Please input your target URL: ')
+    username = input('Please input your username: ')
+    password = getpass.getpass('Please input your password: ')
+    
     #%% initialize AutoSearch class
     auto_search = AutoSearch()
     #%% login
-    auto_search.login(username, password)
+    auto_search.login(target_url, username, password)
     print('Login success.')
 
     #%% search people

@@ -8,7 +8,6 @@ input_path = os.path.join(git_path, 'data/')
 output_path = os.path.join(git_path, 'output/')
 input_filename = 'name_list.xlsx'
 output_filename = 'company_list_output.xlsx'
-target_url = 'https://www.linkedin.com/'
 
 # check platform and select corresponding webdriver
 if platform.system() == "Windows":
