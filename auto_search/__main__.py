@@ -2,7 +2,7 @@
 from auto_search.src import AutoSearch
 import getpass
 import pandas as pd
-import auto_search.config as config
+from auto_search.config import *
 import os
 
 #%% main function
@@ -18,10 +18,9 @@ def run_main():
     print('Login success.')
 
     #%% search people
-    name_list = pd.read_excel(os.path.join(config.input_path, config.input_filename))
-    print(name_list)
-    # for name in name_list['name']:
-    #     auto_search.search_people(name)
+    name_list = pd.read_excel(os.path.join(input_path, input_filename))
+    search_result = auto_search.search_people(name_list, area=None, company=None)
+    search_result.to_excel(os.path.join(output_path, output_filename), index=False)
 
     return None
 
