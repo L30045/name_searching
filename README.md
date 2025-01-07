@@ -9,7 +9,7 @@ Search people on a given website.
 ## Installation
 - Clone the repository and navigate to the folder.
 
-# setup the environment
+### setup the environment
 ```
 conda env create -f env.yaml
 conda activate test-env
@@ -32,7 +32,6 @@ python -m auto_search
 ## Note
 - The searching process only matches `name`.
 - In the future, the package will be able to filter by `name`, `company`, `area`.
-- setup_beta.py is a script to automatically setup the package. It is still in beta. Not recommended to use it.
 
 
 
