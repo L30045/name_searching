@@ -7,17 +7,12 @@ Search people on a given website.
 - ChromeDriver (Tested on Windows 11, Have not tested on other OS)
 
 ## Installation
-- Clone the repository
-- Install the dependencies
-```
-# setup the environment
-conda create -n test_env
-conda activate test_env
+- Clone the repository and navigate to the folder.
 
-# install the dependencies
-conda install -c conda-forge selenium
-conda install -c conda-forge pandas
-conda install -c conda-forge openpyxl
+# setup the environment
+```
+conda env create -f env.yaml
+conda activate test-env
 ```
 
 ## Data preparation
