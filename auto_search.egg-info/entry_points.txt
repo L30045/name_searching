@@ -1,2 +1,0 @@
-[console_scripts]
-install_check = auto_search.main:check_install
