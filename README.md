@@ -6,6 +6,20 @@ Search people on a given website.
 - Selenium
 - ChromeDriver (Tested on Windows 11, Have not tested on other OS)
 
+## Installation
+- Clone the repository
+- Install the dependencies
+```
+# setup the environment
+conda create -n test_env
+conda activate test_env
+
+# install the dependencies
+conda install -c conda-forge selenium
+conda install -c conda-forge pandas
+conda install -c conda-forge openpyxl
+```
+
 ## Data preparation
 - Create a xlsx file with the following columns: `name`, `company`, `area`.
 - Put the file in the `data` folder.
